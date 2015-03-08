@@ -1,0 +1,28 @@
+OASISFormat: 0.4
+Name:        lz77
+Version:     0.1.0
+Synopsis:    Pure OCaml implementation of the LZ77 compression algorithm
+Authors:     Thomas Gazagnaire
+License:     ISC
+Plugins:     META (0.4), DevFiles (0.4)
+BuildTools:  ocamlbuild
+
+Library "lz77"
+  CompiledObject: best
+  Path:           lib
+  Findlibname:    lz77
+  Modules:        Lz77
+  BuildDepends:   cstruct
+
+Executable test
+  Path:           lib_test
+  MainIs:         test.ml
+  Build$:         flag(tests)
+  CompiledObject: best
+  Install:        false
+  BuildDepends:   lz77, oUnit, alcotest
+
+Test test
+  Run$:             flag(tests)
+  Command:          $test -q
+  WorkingDirectory: lib_test

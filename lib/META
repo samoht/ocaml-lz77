@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: fe2222d06433b0b4cbb6073c61759b3d)
+version = "0.1.0"
+description = "Pure OCaml implementation of the LZ77 compression algorithm"
+requires = "cstruct"
+archive(byte) = "lz77.cma"
+archive(byte, plugin) = "lz77.cma"
+archive(native) = "lz77.cmxa"
+archive(native, plugin) = "lz77.cmxs"
+exists_if = "lz77.cma"
+# OASIS_STOP
+
